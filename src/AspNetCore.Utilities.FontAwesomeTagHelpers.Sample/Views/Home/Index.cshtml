@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "FontAwesome Tag Helper Demos";
+}
+
+<h1>TagHelper Demos</h1>
+
+<h2>Bool-Font-Awesome</h2>
+
+<p>Renders a bool as a Font Awesome Icon</p>
+
+<div class="row">
+    <div class="col-4">
+        <h3>True Example <bool-font-awesome-icon value="true"/></h3>
+        <code>
+            &lt;bool-font-awesome-icon value="true" /&gt;
+        </code>
+    </div>
+    <div class="col-4">
+        <h3>False Example <bool-font-awesome-icon value="false"/></h3>
+        <code>
+            &lt;bool-font-awesome-icon value="true" /&gt;
+        </code>
+    </div>
+    <div class="col-4">
+        <h3>False Example Custom <bool-font-awesome-icon value="false" false-icon-class="fas fa-clock text-danger"/></h3>
+        <code>
+            &lt;bool-font-awesome-icon value="true" false-icon-class="fas fa-clock text-danger" /&gt;
+        </code>
+    </div>
+</div>
+
+
