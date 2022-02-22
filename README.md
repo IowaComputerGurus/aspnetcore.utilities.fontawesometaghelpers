@@ -1,4 +1,4 @@
-# aspnetcore.utilities.fontawesometaghelpers ![](https://img.shields.io/github/license/iowacomputergurus/aspnetcore.utilities.fontawesometaghelpers.svg)
+# AspNetCore Font Awesome Tag Helpers ![](https://img.shields.io/github/license/iowacomputergurus/aspnetcore.utilities.fontawesometaghelpers.svg)
 
 ![Build Status](https://github.com/IowaComputerGurus/aspnetcore.utilities.fontawesometaghelpers/actions/workflows/ci-build.yml/badge.svg)
 
@@ -9,7 +9,7 @@ A collection of TagHelpers for ASP.NET Core that make utilizing the FontAwesome 
 
 ## Usage Expecations
 
-These tag helpers are only for markup display, your web project must properly include references to FontAwesome and must abide by all licese and other requirements of FontAwesome for the functionality to be utilized here.  For more on how to include FontAwesome within your project please reference their documentation.
+These tag helpers are only for markup display, your web project must properly include references to FontAwesome and must abide by all license and other requirements of FontAwesome for the functionality to be utilized here.  For more on how to include FontAwesome within your project please reference their documentation.
 
 
 ## Setup - Registering TagHelpers
@@ -22,11 +22,33 @@ You must modify your `_viewimports.cshtml` file by adding
 
 ## Included Tag Helpers
 
-The following is a short example of the included tag helpers, for full information on the helpers included, please run the "Samples" app.
+The following is a short example of the included tag helpers, for full information on the helpers included, please run the "Samples" app, contained within this repository
 
-### HideCondition 
-This tag helper will show a font-awesome check or x based on the boolean value provided.
+### Nullable Type Icon Helpers
 
-``` html
-<bool-font-awesome-icon value="true"/>
-```
+These helpers are for nullable types and will either show the value of the object, or a font-awesome icon if there is no value.  Currently we support the following types.
+
+* bool
+* DateTime
+* decimal
+* int
+* string
+
+The idea behind these helpers is that you can reduce code such as this
+
+```` razor
+@if(Model.UpdatedDate.HasValue)
+{
+    @Model.UpdatedDate
+}
+else
+{
+    <span class="fas fa-minus"></span>
+}
+````
+
+Down to this
+
+```` html
+<date-time-font-awesome-icon Value="@Model.UpdatedDate" />
+````

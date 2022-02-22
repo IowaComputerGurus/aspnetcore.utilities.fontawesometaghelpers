@@ -24,7 +24,7 @@ public class IntFontAwesomeIconTagHelper : TagHelper
     ///     The full FontAwesome css class to be used for a true value
     /// </summary>
     /// <remarks>
-    ///     Default value is "fas fa-check text-success"
+    ///     Default value is "fas fa-minus"
     /// </remarks>
     public string NullValueIconClass { get; set; } = "fas fa-minus";
 
