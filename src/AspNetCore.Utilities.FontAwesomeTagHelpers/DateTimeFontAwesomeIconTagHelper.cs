@@ -1,16 +1,17 @@
-﻿using Microsoft.AspNetCore.Razor.TagHelpers;
+﻿using System;
+using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace ICG.AspNetCore.Utilities.FontAwesomeTagHelpers;
 
 /// <summary>
-///     A tag helper for rendering a nullable decimal value as a FontAwesome icon
+///     A tag helper for rendering a nullable datetime value as a FontAwesome icon
 /// </summary>
-public class DecimalFontAwesomeIconTagHelper : TagHelper
+public class DateTimeFontAwesomeIconTagHelper : TagHelper
 {
     /// <summary>
     ///     The value used to configure the tag helper
     /// </summary>
-    public decimal? Value { get; set; }
+    public DateTime? Value { get; set; }
 
     /// <summary>
     ///     The tag that should be used to render the icon
