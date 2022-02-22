@@ -5,12 +5,12 @@ namespace ICG.AspNetCore.Utilities.FontAwesomeTagHelpers;
 /// <summary>
 ///     A tag helper for rendering a nullable int value as a FontAwesome icon
 /// </summary>
-public class IntFontAwesomeIconTagHelper : TagHelper
+public class StringFontAwesomeIconTagHelper : TagHelper
 {
     /// <summary>
     ///     The value used to configure the tag helper
     /// </summary>
-    public int? Value { get; set; }
+    public string Value { get; set; }
 
     /// <summary>
     ///     The tag that should be used to render the icon
@@ -36,11 +36,11 @@ public class IntFontAwesomeIconTagHelper : TagHelper
     public override void Process(TagHelperContext context, TagHelperOutput output)
     {
         output.TagName = Tag;
-        if (Value.HasValue)
+        if (!string.IsNullOrEmpty(Value))
         {
             output.TagName = null;
             output.TagMode = TagMode.StartTagAndEndTag;
-            output.PostContent.SetContent(Value.Value.ToString());
+            output.PostContent.SetContent(Value);
         }
         else
         {
