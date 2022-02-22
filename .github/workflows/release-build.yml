@@ -40,23 +40,5 @@ jobs:
     - name: Test
       run: dotnet test "${{ env.solution-path }}" --no-build --configuration Release
     
-    - name: Install GitHub Release notes
-      run: npm install github-release-notes -g
-      
-    - name: Create the actual Release
-      run: gren release --token=${{ secrets.ICG_RELEASENOTE_TOKEN }} --override --username=${{ env.organization }} --repo=${{ env.repository }}
-    
-    - name: Release Notes - Add PRs
-      run: |
-          $release = Invoke-WebRequest -URI https://api.github.com/repos/${{ env.organization }}/${{ env.repository }}/releases/tags/v${{ steps.gitversion.outputs.majorMinorPatch }} -Method GET -Headers @{"Authorization"="Bearer ${{ secrets.ICG_RELEASENOTE_TOKEN }}"; "Accept"="application/vnd.github.v3+json"} -UseBasicParsing
-          $releaseContent = ConvertFrom-Json $release.Content
-          $generateNotes = Invoke-WebRequest -URI https://api.github.com/repos/${{ env.organization }}/${{ env.repository }}/releases/generate-notes -Method POST -Headers @{"Authorization"="Bearer ${{ secrets.ICG_RELEASENOTE_TOKEN }}"; "Accept"="application/vnd.github.v3+json"} -Body '{"tag_name":"v${{ steps.gitversion.outputs.majorMinorPatch }}"}' -UseBasicParsing
-          $generateNotesContent = ConvertFrom-Json $generateNotes.Content
-          $body = $releaseContent.Body + $generateNotesContent.Body
-          echo $body
-          $uri = "https://api.github.com/repos/${{ env.organization }}/${{ env.repository }}/releases/" + $releaseContent.id
-          $json = ConvertTo-Json @{"body"=$body} -Compress
-          $response = Invoke-RestMethod -URI $uri -Method PATCH -Headers @{"Authorization"="Bearer ${{ secrets.ICG_RELEASENOTE_TOKEN }}"; "Accept"="application/vnd.github.v3+json"} -Body $json -UseBasicParsing -ContentType "text/plain; charset=utf-8"
-
     - name: Publish to Nuget
       run: nuget push **\*.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{secrets.ICG_NUGET_API_KEY}}
