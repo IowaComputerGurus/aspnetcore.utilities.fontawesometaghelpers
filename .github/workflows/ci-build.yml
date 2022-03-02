@@ -39,7 +39,7 @@ jobs:
     - name: Test
       run: dotnet test "${{ env.solution-path }}" --no-build --configuration Release
 
- code-quality:
+  code-quality:
     runs-on: windows-latest
     name: Analyze Code Quality
     env:
