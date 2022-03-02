@@ -1,11 +1,17 @@
 # AspNetCore Font Awesome Tag Helpers ![](https://img.shields.io/github/license/iowacomputergurus/aspnetcore.utilities.fontawesometaghelpers.svg)
 
+A collection of TagHelpers for ASP.NET Core that make utilizing the FontAwesome library easier to use for developers
+
 ![Build Status](https://github.com/IowaComputerGurus/aspnetcore.utilities.fontawesometaghelpers/actions/workflows/ci-build.yml/badge.svg)
 
 ![](https://img.shields.io/nuget/v/icg.aspnetcore.utilities.fontawesometaghelpers.svg) ![](https://img.shields.io/nuget/dt/icg.aspnetcore.utilities.fontawesometaghelpers.svg)
 
+## SonarCloud Analysis
 
-A collection of TagHelpers for ASP.NET Core that make utilizing the FontAwesome library easier to use for developers
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=IowaComputerGurus_aspnetcore.utilities.fontawesometaghelpers&metric=alert_status)](https://sonarcloud.io/dashboard?id=IowaComputerGurus_aspnetcore.utilities.fontawesometaghelpers)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=IowaComputerGurus_aspnetcore.utilities.fontawesometaghelpers&metric=coverage)](https://sonarcloud.io/dashboard?id=IowaComputerGurus_aspnetcore.utilities.fontawesometaghelpers)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=IowaComputerGurus_aspnetcore.utilities.fontawesometaghelpers&metric=security_rating)](https://sonarcloud.io/dashboard?id=IowaComputerGurus_aspnetcore.utilities.fontawesometaghelpers)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=IowaComputerGurus_aspnetcore.utilities.fontawesometaghelpers&metric=sqale_index)](https://sonarcloud.io/dashboard?id=IowaComputerGurus_aspnetcore.utilities.fontawesometaghelpers)
 
 ## Usage Expecations
 
