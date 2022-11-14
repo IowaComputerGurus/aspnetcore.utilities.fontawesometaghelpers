@@ -29,6 +29,11 @@ public class IntFontAwesomeIconTagHelper : TagHelper
     public string NullValueIconClass { get; set; } = "fas fa-minus";
 
     /// <summary>
+    ///     An optional format string for display
+    /// </summary>
+    public string Format { get; set; } = "";
+
+    /// <summary>
     ///     Renders the tag as desired
     /// </summary>
     /// <param name="context"></param>
@@ -40,7 +45,7 @@ public class IntFontAwesomeIconTagHelper : TagHelper
         {
             output.TagName = null;
             output.TagMode = TagMode.StartTagAndEndTag;
-            output.PostContent.SetContent(Value.Value.ToString());
+            output.PostContent.SetContent(Value.Value.ToString(Format));
         }
         else
         {
