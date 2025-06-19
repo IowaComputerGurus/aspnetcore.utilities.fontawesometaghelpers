@@ -22,10 +22,10 @@ jobs:
     - name: Ensure .NET Installed
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 6.0.x
+        dotnet-version: 8.0.x
         
     - name: Install GitVersion
-      run: dotnet tool install --global GitVersion.Tool
+      run: dotnet tool install --global GitVersion.Tool --version 5.12.0
 
     - name: Determine Version
       id: gitversion
@@ -41,4 +41,4 @@ jobs:
       run: dotnet test "${{ env.solution-path }}" --no-build --configuration Release
     
     - name: Publish to Nuget
-      run: nuget push **\*.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{secrets.ICG_NUGET_API_KEY}}
+      run: dotnet nuget push **/*.nupkg -s 'https://api.nuget.org/v3/index.json' -k ${{secrets.ICG_NUGET_API_KEY}}
