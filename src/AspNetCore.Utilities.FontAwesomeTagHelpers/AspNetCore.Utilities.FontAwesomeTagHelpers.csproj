@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <RootNamespace>ICG.AspNetCore.Utilities.FontAwesomeTagHelpers</RootNamespace>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -14,7 +14,7 @@
     <PackageId>ICG.AspNetCore.Utilities.FontAwesomeTagHelpers</PackageId>
     <Title>AspNetCore Utilities FontAwesome TagHelpers</Title>
     <Description>A collection of TagHelpers making FontAwesome utilization easier for AspNetCore Projects.</Description>
-    <Copyright>Copyright 2022, IowaComputerGurus, Subject to the MIT License</Copyright>
+    <Copyright>Copyright 2026, IowaComputerGurus, Subject to the MIT License</Copyright>
     <PackageProjectUrl>https://github.com/IowaComputerGurus/aspnetcore.utilities.fontawesometaghelpers</PackageProjectUrl>
     <PackageTags>aspnetcore;utility;fontawesome;ui</PackageTags>
     <RepositoryUrl>https://github.com/IowaComputerGurus/aspnetcore.utilities.fontawesometaghelpers</RepositoryUrl>
